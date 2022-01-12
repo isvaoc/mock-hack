@@ -1,11 +1,82 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
+
+import { auth } from '../firebase/firebase-initialize';
 
 export default function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+
+    const handleLogin = async (email, password) => {
+        try {
+            console.log(email)
+            console.log(password)
+            await signInWithEmailAndPassword(auth, email, password);
+            console.log('Estoy dentro')
+            console.log(auth.currentUser)
+            navigate('/')
+
+        } catch (error) {
+            setError('Contraseña y/o correo inválidos');
+            setTimeout(() => setError(''), 2500);
+          }
+    }
+
+    const handleLogout = async () => {
+        try {
+          await signOut(auth);
+          console.log('saliendo de app');
+          navigate('/create');
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
     return (
-        <div>
-            <h1>Aqui es el login</h1>
-        </div>
-    )
+    <div className='login-view'>
+      <img src="https://i.ibb.co/txDQxqW/Group-2.png" alt="logo"></img>
+      <form className="login-form">
+          <input
+            type="string"
+            placeholder="Nombre de Usuario"
+            onChange={(e) => {
+              setEmail(e.target.value + '@totallook.com');
+            }}
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        {error && <p className="error">{error}</p>}
+        <button
+        type="button"
+        className="login-btn"
+        onClick={() => {
+          handleLogin(email, password);
+        }}
+      >
+        Inicia Sesión
+      </button>
+      </form>
+      <button
+        type="button"
+        className="login-btn"
+        onClick={() => {
+            handleLogout();
+          }}
+      >
+        Salir de sesion
+      </button>
+    </div>
+  );
 }
 //import React, { useState } from 'react'
 //import { Link, useHistory } from "react-router-dom";
