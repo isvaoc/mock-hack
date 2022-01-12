@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;800&display=swap');
+
+.container-info{
+    width: 100%;
+    text-align: center;
+    padding: 20px 50px;
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container-cards{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.container-cat{
+    background-color: #D0A0A2;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.cta-btns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.cta-btns button{
+    background-color: #D2E7E0;
+        border:none;
+        border-radius: 20px;
+        text-align: center;
+        margin: auto;
+        padding: 10px 20px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 12px;
+    
+}
+
+.cat-delete:active,.cat-edit:active, .btn-categorias:active {
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: translateY(3px);
+}
+
+.btn-categorias{
+    background-color: #6E030F;
+    color:white;
+        border:none;
+        border-radius: 20px;
+        text-align: center;
+        margin: auto;
+        padding: 10px 20px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 12px;
+}
+
+.div-new-cat{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px 50px;
+}
