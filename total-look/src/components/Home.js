@@ -22,7 +22,7 @@ export default function Home() {
         </div>
         <div>
             <h2>Categories</h2>
-            <Link to ='/categories'>See all categories >></Link>
+            <Link to ='/categories'>See all categories {'>>'} </Link>
         </div>
 
         </>
