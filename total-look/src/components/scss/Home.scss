@@ -12,10 +12,15 @@ header, footer{
     background-color: $header-color;
     height: 7em;
 }
+.logo{
+    width: 15em;
+}
+
 .icons{
     width: 50px;
     margin:1em;
     margin-top:0;
+    float: right
 }
 
 .promo {
@@ -29,6 +34,28 @@ header, footer{
     width: 800px;
 
 }
+.search{
+    float: right;
+    margin-right:3vw;
+   
+}
+.searchInput{
+    width: 342px;
+    height: 43px;
+    left: 1029px;
+    top: 148px;
+    
+    background: #D0A0A2;
+    border: 3px solid #6E030F;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+.lupa{
+    background-color: transparent;
+}
+.lupaImg{
+    width: 30px;
+}
 .titulo{
     align-self: flex-start;
     margin-left: 45px;
@@ -38,7 +65,12 @@ header, footer{
 }
 
 .bar-icon{
-    display: flex;
+    width: 10em;
+    display:flex;
     justify-content: right;
-    
+    align-items: center;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
 }

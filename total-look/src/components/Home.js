@@ -9,7 +9,7 @@ export default function Home() {
         <div>
             <header className="head">
                 
-              <img src={logo} alt="logo"></img>
+              <img  className="logo"src={logo} alt="logo"></img>
               <div className="bar-icon">
               <Link to ='/login'>
               <img className="icons" src={"https://i.ibb.co/fFbLLM6/userblanco.png"} alt="login"></img></Link>
@@ -22,8 +22,9 @@ export default function Home() {
         </div>
         <div>
             <h2 className="titulo">Promotions</h2>
-            <input className="search" type="search" id="site-search" name="q" aria-label="Search through site content" placeholder="Busca tu ropa"/>
-            <button><img className="icons" src={"https://i.ibb.co/bQQP6zx/lupa-2.png"} alt="lupa"/></button>
+            <div className="search">
+            <input className="searchInput" type="search" id="site-search" name="q" aria-label="Search through site content" placeholder="Look for your clothes"/>
+           <img className="lupaImg" src={"https://i.ibb.co/bQQP6zx/lupa-2.png"} alt="lupa"/>  </div>
             <div  className="promo"> <Link to ='/discounts'><img className="promoImg" src={"https://i.ibb.co/k68bDdC/desc.png"} alt="desc"></img></Link></div>
            
         </div>

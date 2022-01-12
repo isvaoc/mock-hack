@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import '../components/scss/Login.scss'
 import { useNavigate } from 'react-router-dom';
 
 import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
 import { auth } from '../firebase/firebase-initialize';
+
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -39,7 +41,7 @@ export default function Login() {
 
     return (
     <div className='login-view'>
-      <img src="https://i.ibb.co/txDQxqW/Group-2.png" alt="logo"></img>
+      <img className= "logoLogin" src="https://i.ibb.co/txDQxqW/Group-2.png" alt="logo"></img>
       <form className="login-form">
           <input
             type="string"
@@ -68,13 +70,14 @@ export default function Login() {
       </form>
       <button
         type="button"
-        className="login-btn"
+        className="logout-btn"
         onClick={() => {
             handleLogout();
           }}
       >
         Salir de sesion
       </button>
+      <footer>Realizado por Codeven</footer>
     </div>
   );
 }
